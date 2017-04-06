@@ -1,11 +1,11 @@
+const reseedDatabase = false;
+
 const express = require("express"),
     app = express(),
     bodyParser = require("body-parser"),
     mongoose = require("mongoose"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
-    Campground = require("./models/campground"),
-    Comment = require("./models/comment"),
     User = require("./models/user"),
     flash = require("connect-flash"),
     methodOverride = require("method-override"),
@@ -23,7 +23,11 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
-//seedDB(); // seed the database
+
+// seed the database
+if (reseedDatabase) {
+    seedDB();
+}
 
 // passport config
 app.use(require("express-session") ({
@@ -50,6 +54,7 @@ app.use("/", indexRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds", campgroundRoutes); // appends "/campgrounds" infront of campground routes
 
+// listener
 app.listen(process.env.PORT, process.env.IP, function() {
     console.log("Server has started.");
 }); 
