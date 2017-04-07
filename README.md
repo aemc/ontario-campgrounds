@@ -1,6 +1,8 @@
-# yelp-camp 
+# Ontario Campgrounds
 * In progress...
 
 ### Built with:
-* NodeJS
+* NodeJS w/ Express
+* MongoDB
+* Bootstrap
 
