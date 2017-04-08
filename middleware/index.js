@@ -3,9 +3,9 @@ const middlewareObj = {};
 const Campground = require("../models/campground");
 const Comment = require("../models/comment");
 
-middlewareObj.checkCampgroundOwnership = function(req, res, next) {
+middlewareObj.checkCampgroundOwnership = (req, res, next) => {
     if (req.isAuthenticated()) {
-        Campground.findById(req.params.id, function(err, foundCampground) {
+        Campground.findById(req.params.id, (err, foundCampground) => {
             if (err) {
                 req.flash("error", "Campground not found.");
                 res.redirect("back");
@@ -24,9 +24,9 @@ middlewareObj.checkCampgroundOwnership = function(req, res, next) {
     }
 }
 
-middlewareObj.checkCommentOwnership = function(req, res, next) {
+middlewareObj.checkCommentOwnership = (req, res, next) => {
     if (req.isAuthenticated()) {
-        Comment.findById(req.params.comment_id, function(err, foundComment) {
+        Comment.findById(req.params.comment_id, (err, foundComment) => {
             if (err) {
                 res.redirect("back");
             } else {
@@ -44,7 +44,7 @@ middlewareObj.checkCommentOwnership = function(req, res, next) {
     }
 }
 
-middlewareObj.isLoggedIn = function(req, res, next) {
+middlewareObj.isLoggedIn = (req, res, next) => {
     if (req.isAuthenticated()) {
         return next();
     }

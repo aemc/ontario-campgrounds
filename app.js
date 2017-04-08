@@ -43,7 +43,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 // adds currentUser to every template
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
     res.locals.currentUser = req.user; // contains user object
     res.locals.success = req.flash("success");
     res.locals.error = req.flash("error");
@@ -55,6 +55,6 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds", campgroundRoutes); // appends "/campgrounds" infront of campground routes
 
 // listener
-app.listen(process.env.PORT, process.env.IP, function() {
+app.listen(process.env.PORT, process.env.IP, () => {
     console.log("Server has started.");
 }); 
