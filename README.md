@@ -8,5 +8,6 @@
 
 ### ToDoList:
 - [x] Added Authentication and Authorization for users
+- [x] Added comment date
 - [ ] Polish front-end
-- [ ] Deploy to Amazon Web Services
+- [ ] Deploy to Amazon Web Services/Heroku
