@@ -54,7 +54,7 @@ app.use("/", indexRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds", campgroundRoutes); // appends "/campgrounds" infront of campground routes
 
-// listener
+// listener for Cloud9, otherwise use app.listen(3000, ...)
 app.listen(process.env.PORT, process.env.IP, () => {
     console.log("Server has started.");
 }); 
