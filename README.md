@@ -21,9 +21,9 @@ Either run in the cloud9 IDE or in your own development environment. The latter 
 - [ ] Deploy to Amazon Web Services/Heroku
 
 ### Built With
-* [NodeJS with Express](https://expressjs.com/)
-* [MongoDB](https://www.mongodb.com/)
-* [Bootstrap](https://getbootstrap.com/)
+* [NodeJS with Express](https://expressjs.com/) - Backend framework
+* [MongoDB](https://www.mongodb.com/) - Database
+* [Bootstrap](https://getbootstrap.com/) - Frontend framework
 
 ### Authors
 * **Ammiel Cruz** - Frontend and backend - [aemc](https://github.com/aemc)
