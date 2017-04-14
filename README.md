@@ -7,6 +7,9 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 You will need to install NodeJS, Express, and MongoDB. See below for links.
 
+### Installing
+Just clone or download the source code and run NodeJS within the root directory.
+
 ### Running
 Either run in the cloud9 IDE or in your own development environment. The latter will need the port settings changed within the app.js file.
 
