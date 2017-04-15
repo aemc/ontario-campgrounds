@@ -20,7 +20,7 @@ mongoose.connect("mongodb://localhost/yelp_camp");
 mongoose.Promise = global.Promise;
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/public")); // serves static files in express
 app.use(methodOverride("_method"));
 app.use(flash());
 
@@ -54,7 +54,7 @@ app.use("/", indexRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds", campgroundRoutes); // appends "/campgrounds" infront of campground routes
 
-// listener for Cloud9, otherwise use app.listen(3000, ...)
+// listener
 app.listen(process.env.PORT, process.env.IP, () => {
     console.log("Server has started.");
 }); 
