@@ -25,5 +25,5 @@ Either run in the cloud9 IDE or in your own development environment. The latter 
 * [MongoDB](https://www.mongodb.com/) - Database
 * [Bootstrap](https://getbootstrap.com/) - Frontend framework
 
-### Authors
+### Author
 * **Ammiel Cruz** - Frontend and backend - [aemc](https://github.com/aemc)
