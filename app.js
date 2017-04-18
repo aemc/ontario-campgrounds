@@ -1,15 +1,15 @@
 const reseedDatabase = false;
 
 const express = require("express"),
-    app = express(),
-    bodyParser = require("body-parser"),
-    mongoose = require("mongoose"),
-    passport = require("passport"),
-    LocalStrategy = require("passport-local"),
-    User = require("./models/user"),
-    flash = require("connect-flash"),
-    methodOverride = require("method-override"),
-    seedDB = require("./seeds");
+          app = express(),
+   bodyParser = require("body-parser"),
+     mongoose = require("mongoose"),
+     passport = require("passport"),
+LocalStrategy = require("passport-local"),
+         User = require("./models/user"),
+        flash = require("connect-flash"),
+methodOverride = require("method-override"),
+       seedDB = require("./seeds");
 
 // requiring routes
 const commentRoutes = require("./routes/comments"),
