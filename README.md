@@ -16,6 +16,7 @@ Either run in the cloud9 IDE or in your own development environment. The latter 
 ### To-Do List
 - [x] Added Authentication and Authorization for users
 - [x] Added comment date
+- [ ] Finish seed database
 - [ ] Card size consistency with picture uploads
 - [ ] Polish front-end
 - [ ] Deploy to Amazon Web Services/Heroku
@@ -25,5 +26,3 @@ Either run in the cloud9 IDE or in your own development environment. The latter 
 * [MongoDB](https://www.mongodb.com/) - Database
 * [Bootstrap](https://getbootstrap.com/) - Frontend framework
 
-### Author
-* **Ammiel Cruz** - Frontend and backend - [aemc](https://github.com/aemc)
