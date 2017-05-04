@@ -55,6 +55,6 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds", campgroundRoutes); // appends "/campgrounds" infront of campground routes
 
 // listener
-app.listen(process.env.PORT, process.env.IP, () => {
+app.listen(3000, () => {
     console.log("Server has started.");
 }); 

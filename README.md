@@ -16,9 +16,9 @@ Either run in the cloud9 IDE or in your own development environment. The latter 
 ### To-Do List
 - [x] Added Authentication and Authorization for users
 - [x] Added comment date
-- [ ] Finish seed database
-- [ ] Card size consistency with picture uploads
-- [ ] Polish front-end
+- [x] Finish seed database
+- [x] Card size consistency with picture uploads
+- [x] Polish front-end
 - [ ] Deploy to Amazon Web Services/Heroku
 
 ### Built With
