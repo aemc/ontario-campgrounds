@@ -4,9 +4,7 @@ const Campground = require("../models/campground");
 const Comment = require("../models/comment");
 const middleware = require("../middleware");
 
-// comments new
 router.get("/new", middleware.isLoggedIn, (req, res) => {
-    // find campground by id
     Campground.findById(req.params.id, (err, campground) => {
         if (err) {
             console.log(err);
@@ -16,9 +14,7 @@ router.get("/new", middleware.isLoggedIn, (req, res) => {
     })
 });
 
-// comments create
 router.post("/", middleware.isLoggedIn, (req, res) => {
-    //lookup campground using id
     Campground.findById(req.params.id, (err, campground) => {
         if (err) {
             console.log(err);
@@ -29,10 +25,9 @@ router.post("/", middleware.isLoggedIn, (req, res) => {
                     req.flash("error", "Something went wrong!");
                     console.log(err);
                 } else {
-                    // add username and id to comment
+                    // add username and id to comment then save it
                     comment.author.id = req.user._id;
                     comment.author.username = req.user.username;
-                    // save comment
                     comment.save()
                     campground.comments.push(comment);
                     campground.save();
@@ -44,7 +39,6 @@ router.post("/", middleware.isLoggedIn, (req, res) => {
     });
 });
 
-// comment edit route
 router.get("/:comment_id/edit", middleware.checkCommentOwnership, (req, res) => {
     Comment.findById(req.params.comment_id, (err, foundComment) => {
         if (err) {
@@ -55,7 +49,6 @@ router.get("/:comment_id/edit", middleware.checkCommentOwnership, (req, res) => 
     });
 });
 
-// comment update route
 router.put("/:comment_id", middleware.checkCommentOwnership, (req, res) => {
     Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment, (err, updatedComment) => {
         if (err) {
@@ -66,7 +59,6 @@ router.put("/:comment_id", middleware.checkCommentOwnership, (req, res) => {
     });
 });
 
-// comment destroy route
 router.delete("/:comment_id", middleware.checkCommentOwnership, (req, res) => {
     Comment.findByIdAndRemove(req.params.comment_id, (err) => {
         if (err) {

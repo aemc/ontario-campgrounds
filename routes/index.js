@@ -3,18 +3,15 @@ const router = express.Router();
 const passport = require("passport");
 const User = require("../models/user");
 
-// root route
 router.get("/", (req, res) => {
 	res.render("landing");
 });
 
 // auth routes
-// show register form
 router.get("/register", (req, res) => {
     res.render("register");
 });
 
-// handle sign up logic
 router.post("/register", (req, res) => {
     const newUser = new User({username: req.body.username});
     User.register(newUser, req.body.password, (err, user) => {
@@ -29,13 +26,10 @@ router.post("/register", (req, res) => {
     });
 });
 
-// show login form
 router.get("/login", (req, res) => {
     res.render("login");
 });
 
-// handing login logic
-// app.post("/login", middleware, callback)
 router.post("/login", passport.authenticate("local",
     {
         successRedirect: "/campgrounds",
@@ -43,7 +37,6 @@ router.post("/login", passport.authenticate("local",
     }), (req, res) => {
 });
 
-// logout route
 router.get("/logout", (req, res) => {
     req.logout();
     req.flash("success", "Logged Out Successfully.");
