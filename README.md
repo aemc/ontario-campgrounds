@@ -25,4 +25,3 @@ Either run in the cloud9 IDE or in your own development environment. The latter 
 * [Node.js with Express](https://expressjs.com/) - Backend framework
 * [MongoDB](https://www.mongodb.com/) - Database
 * [Bootstrap](https://getbootstrap.com/) - Frontend framework
-
