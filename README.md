@@ -14,6 +14,7 @@ Clone or download the source code and run ```$ node app.js``` within the root di
 Either run in the cloud9 IDE or in your own development environment. The latter will need the port settings changed within the app.js file.
 
 ### To-Do List
+- [ ] Update this project in progress 
 - [x] Added Authentication and Authorization for users
 - [x] Added comment date
 - [x] Finish seed database
