@@ -14,12 +14,12 @@ methodOverride = require("method-override"),
 const commentRoutes = require("./routes/comments"),
       campgroundRoutes = require("./routes/campgrounds"),
       indexRoutes = require("./routes/index");
-    
+
 mongoose.connect("mongodb://localhost/yelp_camp");
 mongoose.Promise = global.Promise;
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
-app.use(express.static(__dirname + "/public")); 
+app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
 
@@ -39,7 +39,7 @@ passport.deserializeUser(User.deserializeUser());
 
 // adds currentUser to every template
 app.use((req, res, next) => {
-    res.locals.currentUser = req.user; 
+    res.locals.currentUser = req.user;
     res.locals.success = req.flash("success");
     res.locals.error = req.flash("error");
     next();
@@ -49,6 +49,5 @@ app.use("/", indexRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds", campgroundRoutes); // appends "/campgrounds" infront of campground routes
 
-app.listen(3000, () => {
-    console.log("Server has started.");
-}); 
+const port = process.env.port || 3000;
+app.listen(port, () => console.log("Server has started."));
