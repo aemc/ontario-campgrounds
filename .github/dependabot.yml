@@ -1,0 +1,38 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "10:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: npm-check-updates
+    versions:
+    - 11.3.0
+    - 11.5.3
+  - dependency-name: mongoose
+    versions:
+    - 5.12.5
+    - 5.7.5
+  - dependency-name: nodemon
+    versions:
+    - 2.0.7
+  - dependency-name: mpath
+    versions:
+    - 0.8.3
+  - dependency-name: mquery
+    versions:
+    - 3.2.5
+  - dependency-name: mongodb
+    versions:
+    - 3.6.5
+  - dependency-name: js-yaml
+    versions:
+    - 3.14.1
+  - dependency-name: dot-prop
+    versions:
+    - 4.2.1
+  - dependency-name: bson
+    versions:
+    - 1.1.6
